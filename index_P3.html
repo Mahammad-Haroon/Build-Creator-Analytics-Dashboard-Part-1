@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeerLearn — Peer Tutoring Marketplace</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      color: #1f2937;
+      background: #f9fafb;
+      line-height: 1.5;
+    }
+    a { color: #4338ca; }
+    header {
+      background: #4338ca;
+      color: #fff;
+      padding: 1.5rem 1rem;
+    }
+    header h1 { margin: 0 0 0.25rem; font-size: 1.8rem; }
+    header p { margin: 0 0 1rem; }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    header nav a:hover,
+    header nav a:focus { text-decoration: underline; }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+    section { margin-bottom: 2.5rem; }
+    section > h2 {
+      border-bottom: 2px solid #4338ca;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .tutor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    article.tutor-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    article.tutor-card h3 { margin-top: 0; }
+    .rate { font-weight: 600; color: #4338ca; }
+    form {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 500px;
+    }
+    .form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
+    label { font-weight: 600; margin-bottom: 0.3rem; }
+    input, select, textarea {
+      padding: 0.5rem;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      font: inherit;
+    }
+    button[type="submit"] {
+      background: #4338ca;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { background: #3730a3; }
+    footer {
+      background: #1f2937;
+      color: #d1d5db;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    footer p { margin: 0.25rem 0; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PeerLearn</h1>
+    <p>Affordable, friendly tutoring from students who just aced your subject.</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#tutors">Find a Tutor</a></li>
+        <li><a href="#booking">Book a Session</a></li>
+        <li><a href="#footer-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="tutors" aria-labelledby="tutors-heading">
+      <h2 id="tutors-heading">Meet Our Tutors</h2>
+      <div class="tutor-grid">
+
+        <article class="tutor-card">
+          <h3>Aditi Rao</h3>
+          <p>Subject: Mathematics (Algebra &amp; Calculus)</p>
+          <p class="rate">₹300/hour</p>
+          <p>Second-year engineering student who loves breaking down tricky proofs into simple steps.</p>
+        </article>
+
+        <article class="tutor-card">
+          <h3>Marcus Chen</h3>
+          <p>Subject: Guitar (Beginner to Intermediate)</p>
+          <p class="rate">₹250/hour</p>
+          <p>Self-taught guitarist turned music student; focuses on chords, rhythm, and stage confidence.</p>
+        </article>
+
+        <article class="tutor-card">
+          <h3>Fatima Sheikh</h3>
+          <p>Subject: Spoken English</p>
+          <p class="rate">₹200/hour</p>
+          <p>Debate club captain who helps students build fluency and confidence in everyday conversation.</p>
+        </article>
+
+        <article class="tutor-card">
+          <h3>Ravi Kumar</h3>
+          <p>Subject: Physics (Mechanics &amp; Electromagnetism)</p>
+          <p class="rate">₹350/hour</p>
+          <p>Recently scored top of his class; explains concepts using real-world, relatable examples.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="booking" aria-labelledby="booking-heading">
+      <h2 id="booking-heading">Book a Session</h2>
+      <form action="#" method="post">
+
+        <div class="form-group">
+          <label for="student-name">Your Name</label>
+          <input type="text" id="student-name" name="student-name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="student-email">Email Address</label>
+          <input type="email" id="student-email" name="student-email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="">-- Select a subject --</option>
+            <option value="mathematics">Mathematics</option>
+            <option value="guitar">Guitar</option>
+            <option value="spoken-english">Spoken English</option>
+            <option value="physics">Physics</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="session-date">Preferred Date</label>
+          <input type="date" id="session-date" name="session-date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="session-time">Preferred Time</label>
+          <input type="time" id="session-time" name="session-time">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us what you'd like to work on..."></textarea>
+        </div>
+
+        <button type="submit">Request Session</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer id="footer-contact">
+    <p>&copy; 2026 PeerLearn. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:hello@peerlearn.example">hello@peerlearn.example</a></p>
+  </footer>
+
+</body>
+</html>
